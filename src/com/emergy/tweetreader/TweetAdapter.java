@@ -38,10 +38,20 @@ public class TweetAdapter extends BaseAdapter {
 		LayoutInflater inflater = LayoutInflater.from(context);
 		View view = inflater.inflate(R.layout.list_item, null, true);
 		
-		TextView textView = (TextView) view.findViewById(R.id.text_view_01);
+		TextView textViewTweetAccountName = (TextView) view.findViewById(R.id.textview_tweet_account_name);
+		TextView textViewTweetAccountId = (TextView) view.findViewById(R.id.textview_tweet_account_id);
+		TextView textViewTweetContent = (TextView) view.findViewById(R.id.textview_tweet_content);
+		TextView textViewTweetDate = (TextView) view.findViewById(R.id.textview_tweet_date);
+		TextView textViewTweetTime = (TextView) view.findViewById(R.id.textview_tweet_time);
+		TextView textViewTweetRetweets = (TextView) view.findViewById(R.id.textview_tweet_retweets);
 		
 		Tweet tweetItem = this.getItem(position);
-		textView.setText(tweetItem.getContents());
+		textViewTweetAccountName.setText(tweetItem.getAccountNameString());
+		textViewTweetAccountId.setText(tweetItem.getAccountIdString());
+		textViewTweetContent.setText(tweetItem.getContents());
+		textViewTweetDate.setText(tweetItem.getDateString());
+		textViewTweetTime.setText(tweetItem.getTimeString());
+		textViewTweetRetweets.setText(tweetItem.getRetweetsString());
 		return view;
 	}
 
